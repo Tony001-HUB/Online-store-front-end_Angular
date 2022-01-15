@@ -5,6 +5,7 @@ import { NewsComponent } from './news.component';
 import {RouterModule} from "@angular/router";
 import {MatTableModule} from "@angular/material/table";
 import {MatPaginatorModule} from "@angular/material/paginator";
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import {MatPaginatorModule} from "@angular/material/paginator";
     NewsRoutingModule,
     RouterModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    HttpClientModule
   ]
 })
 export class NewsModule { }
