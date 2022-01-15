@@ -3,17 +3,17 @@
     <mat-icon>more_vert</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
-    <button mat-menu-item>
+    <button [routerLink]="'/music'" mat-menu-item>
       <mat-icon class="fas fa-music"></mat-icon>
-      <span [routerLink]="'/music'">Music</span>
+      <span>Music</span>
     </button>
-    <button mat-menu-item>
+    <button [routerLink]="'/movies'" mat-menu-item>
       <mat-icon class="fas fa-video"></mat-icon>
-      <span [routerLink]="'/movies'">Movies</span>
+      <span>Movies</span>
     </button>
-    <button mat-menu-item>
+    <button [routerLink]="'/news'" mat-menu-item>
       <mat-icon class="far fa-newspaper"></mat-icon>
-      <span [routerLink]="'/news'">Newspaper</span>
+      <span>Newspaper</span>
     </button>
   </mat-menu>
 

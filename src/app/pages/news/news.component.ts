@@ -11,9 +11,8 @@ import {INews} from "./models/newsModel";
   styleUrls: ['./news.component.css']
 })
 export class NewsComponent implements OnInit  {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = [ 'name', 'weight', 'symbol', 'delete-btn'];
   dataSource: MatTableDataSource<INews>;
-  //dataSource = new MatTableDataSource<PeriodicElement>([]);
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
@@ -25,5 +24,10 @@ export class NewsComponent implements OnInit  {
 
   public initData() {
     this.dataSource.paginator = this.paginator;
+  }
+
+  public removeNews(selectedNews: INews) {
+    this.newsService.deleteNews(selectedNews.id).subscribe();
+    window.location.reload();
   }
 }

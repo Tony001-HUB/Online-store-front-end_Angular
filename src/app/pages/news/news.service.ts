@@ -18,4 +18,8 @@ export class NewsService {
       }
     });
   }
+
+  deleteNews(id: number): Observable<void> {
+    return this.httpClient.delete<void>(`${environment.localDBUrl}/news/${id}`);
+  }
 }

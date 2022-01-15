@@ -1,11 +1,6 @@
+
 <div class="mat-elevation-z8 table-wrapper">
   <table mat-table [dataSource]="dataSource">
-
-    <!-- Position Column -->
-    <ng-container matColumnDef="position">
-      <th mat-header-cell *matHeaderCellDef> No. </th>
-      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-    </ng-container>
 
     <!-- Name Column -->
     <ng-container matColumnDef="name">
@@ -25,6 +20,18 @@
       <td mat-cell *matCellDef="let element"> <a href="{{element['link']}}">Ссылка</a> </td>
     </ng-container>
 
+    <ng-container matColumnDef="delete-btn">
+      <th mat-header-cell *matHeaderCellDef> Delete news </th>
+      <td mat-cell *matCellDef="let element">
+        <button
+          (click)="removeNews(element)"
+          mat-raised-button
+          class="demo-button">
+          Remove
+        </button>
+      </td>
+    </ng-container>
+
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
@@ -34,4 +41,10 @@
                  showFirstLastButtons
                  aria-label="Select page of periodic elements">
   </mat-paginator>
+</div>
+
+<div class="demo-button_wrapper">
+  <button mat-raised-button class="my_demo-button">
+    Add news
+  </button>
 </div>
