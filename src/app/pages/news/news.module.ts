@@ -1,19 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { MusicRoutingModule } from './music-routing.module';
-import { MusicComponent } from './music.component';
+import { NewsRoutingModule } from './news-routing.module';
+import { NewsComponent } from './news.component';
 import {RouterModule} from "@angular/router";
 
 
 @NgModule({
   declarations: [
-    MusicComponent
+    NewsComponent
   ],
   imports: [
     CommonModule,
-    MusicRoutingModule,
+    NewsRoutingModule,
     RouterModule
   ]
 })
-export class MusicModule { }
+export class NewsModule { }

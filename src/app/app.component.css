@@ -1,0 +1,9 @@
+.menu-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hello-all {
+  font-size: 30px;
+  margin-right: 50px;
+}

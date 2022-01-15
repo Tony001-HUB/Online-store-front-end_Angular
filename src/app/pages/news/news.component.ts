@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-series',
-  templateUrl: './series.component.html',
-  styleUrls: ['./series.component.css']
+  templateUrl: './news.component.html',
+  styleUrls: ['./news.component.css']
 })
-export class SeriesComponent implements OnInit {
+export class NewsComponent implements OnInit {
 
   constructor() { }
 
