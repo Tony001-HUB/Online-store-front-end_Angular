@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { NewsRoutingModule } from './news-routing.module';
 import { NewsComponent } from './news.component';
 import {RouterModule} from "@angular/router";
+import {MatTableModule} from "@angular/material/table";
+import {MatPaginatorModule} from "@angular/material/paginator";
 
 
 @NgModule({
@@ -12,7 +14,9 @@ import {RouterModule} from "@angular/router";
   imports: [
     CommonModule,
     NewsRoutingModule,
-    RouterModule
+    RouterModule,
+    MatTableModule,
+    MatPaginatorModule
   ]
 })
 export class NewsModule { }
