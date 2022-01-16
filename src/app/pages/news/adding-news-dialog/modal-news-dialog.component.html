@@ -1,0 +1,23 @@
+<form class="example-form" [formGroup]="formGroup">
+  <mat-form-field class="form-field_wrapper" appearance="fill">
+    <mat-label>Title</mat-label>
+    <input type="text" matInput formControlName="title" placeholder="Новость о....">
+  </mat-form-field>
+  <mat-form-field class="form-field_wrapper" appearance="fill">
+    <mat-label>Country</mat-label>
+    <input type="text" matInput formControlName="country" placeholder="Беларусь...">
+  </mat-form-field>
+  <mat-form-field class="form-field_wrapper" appearance="fill">
+    <mat-label>Link</mat-label>
+    <input type="text" matInput formControlName="link" placeholder="https:news-example.com">
+  </mat-form-field>
+</form>
+<div class="modal-action_wrapper">
+  <button mat-raised-button (click)="closeModal()" class="my_demo-button">
+    Close
+  </button>
+
+  <button mat-raised-button (click)="target ? createNews() : editNews()" class="my_demo-button">
+    Create
+  </button>
+</div>

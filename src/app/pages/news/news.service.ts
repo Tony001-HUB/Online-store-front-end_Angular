@@ -11,7 +11,7 @@ export class NewsService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getAllNews(): Observable<INews[]> {
+  public getAllNews(): Observable<INews[]> {
     return this.httpClient.get<INews[]>(`${environment.localDBUrl}/news`, {
       headers: {
         'Access-Control-Allow-Origin': '*'
@@ -19,7 +19,11 @@ export class NewsService {
     });
   }
 
-  deleteNews(id: number): Observable<void> {
+  public createNews(news: INews): Observable<void> {
+    return this.httpClient.post<void>(`${environment.localDBUrl}/news`, news);
+  }
+
+  public deleteNews(id: number): Observable<void> {
     return this.httpClient.delete<void>(`${environment.localDBUrl}/news/${id}`);
   }
 }
