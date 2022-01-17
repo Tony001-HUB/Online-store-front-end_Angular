@@ -4,7 +4,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import {NewsService} from "./news.service";
 import {INews} from "./models/newsModel";
 import {MatDialog} from '@angular/material/dialog';
-import {ModalNewsDialogComponent} from "./adding-news-dialog/modal-news-dialog.component";
+import {ModalNewsDialogComponent} from "./modal-news-dialog/modal-news-dialog.component";
 import { shareReplay } from 'rxjs/operators';
 
 @Component({
@@ -55,7 +55,7 @@ export class NewsComponent implements OnInit  {
     });
 
     addButtonDialogRef.afterClosed().subscribe(result => {
-      //this.fetchNews();
+      this.fetchNews();
     });
   }
 }

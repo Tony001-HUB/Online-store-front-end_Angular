@@ -5,7 +5,7 @@ import { DialogData } from '../models/dialogModel';
 import {NewsService} from "../news.service";
 
 @Component({
-  selector: 'app-adding-news-dialog',
+  selector: 'app-modal-news-dialog',
   templateUrl: './modal-news-dialog.component.html',
   styleUrls: ['./modal-news-dialog.component.css']
 })
@@ -27,11 +27,10 @@ export class ModalNewsDialogComponent implements OnInit {
 
   private formInitialization() {
     this.formGroup = this.formBuilder.group({
-      title: new FormControl(null, [Validators.required,Validators.maxLength(100)]),
-      country: new FormControl(null, [Validators.required]),
-      link: new FormControl(null, [Validators.required])
+      title: new FormControl(this.target ? null : this.data.object.title, [Validators.required,Validators.maxLength(100)]),
+      country: new FormControl(this.target ? null : this.data.object.country, [Validators.required]),
+      link: new FormControl(this.target ? null : this.data.object.link, [Validators.required])
     });
-
   }
 
   public closeModal() {
@@ -49,6 +48,7 @@ export class ModalNewsDialogComponent implements OnInit {
 
   public editNews() {
     console.log('редактирование задачи', this.data.object)
+    this.newsService.updateNews(this.formGroup.value, this.data.object.id).subscribe();
     this.dialogRef.close();
   }
 
