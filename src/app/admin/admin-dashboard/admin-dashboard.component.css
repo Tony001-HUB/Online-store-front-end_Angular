@@ -1,0 +1,16 @@
+.menu-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hello-all {
+  font-size: 30px;
+  margin-right: 120px;
+}
+
+.my-style {
+  position: absolute;
+  margin-left: 94%;
+  background-color: aliceblue;
+  color: darkorchid;
+}
