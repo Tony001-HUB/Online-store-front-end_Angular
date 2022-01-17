@@ -11,11 +11,18 @@ import { RouterModule } from '@angular/router';
 import {HttpClientModule} from "@angular/common/http";
 import {MatButtonModule} from "@angular/material/button";
 import { MainLayoutComponent } from './pages/main-layout/main-layout.component';
+import {NavigationComponent} from "./pages/navigation/navigation.component";
+import {MatStepperModule} from "@angular/material/stepper";
+import {ReactiveFormsModule} from "@angular/forms";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainLayoutComponent
+    MainLayoutComponent,
+    NavigationComponent
   ],
   imports: [
     AppRoutingModule,
@@ -27,7 +34,10 @@ import { MainLayoutComponent } from './pages/main-layout/main-layout.component';
     MatMenuModule,
     FontAwesomeModule,
     HttpClientModule,
-    MatButtonModule
+    MatButtonModule,
+    MatStepperModule,
+    ReactiveFormsModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
