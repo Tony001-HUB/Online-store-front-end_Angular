@@ -1,5 +1,5 @@
 <form class="example-form" [formGroup]="form" (ngSubmit)="submit()">
-  <h2>Login as admin</h2>
+  <h2>Login as user</h2>
 
   <div class="form-control">
     <mat-form-field class="form-field_wrapper" appearance="outline">
@@ -27,6 +27,10 @@
       [disabled]="form.invalid || submitted">
       Login
     </button>
+  </div>
+
+  <div class="reg_btn-wrapper" >
+    <a class="reg_btn" [routerLink]="'/admin/registration'" href="#">Registration <mat-icon matSuffix class="fas fa-registered"></mat-icon></a>
   </div>
 
 </form>

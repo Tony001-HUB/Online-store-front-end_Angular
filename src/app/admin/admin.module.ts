@@ -13,13 +13,15 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import {HttpClientModule} from "@angular/common/http";
 import { UsersComponent } from './users/users.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 
 @NgModule({
   declarations: [
     AdminDashboardComponent,
     LoginComponent,
-    UsersComponent
+    UsersComponent,
+    RegistrationComponent
   ],
   imports: [
     CommonModule,

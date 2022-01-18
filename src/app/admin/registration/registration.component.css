@@ -9,10 +9,6 @@ h2, h4 {
   margin-bottom: 40px;
 }
 
-.reg_btn-wrapper {
-  text-align: right;
-}
-
 .form-field_wrapper {
   width: 100%;
 }
@@ -30,4 +26,8 @@ h2, h4 {
 .btn-wrapper {
   display: flex;
   justify-content: center;
+}
+
+.reg_btn-wrapper {
+  text-align: right;
 }

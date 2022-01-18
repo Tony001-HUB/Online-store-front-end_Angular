@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import { Observable, tap } from 'rxjs';
-import {IUser} from "../models/user";
-import { IAuthenticationInfo } from '../models/authenticationInfo';
-import {environment} from "../../../../environments/environment";
+import {IUser} from "../login/models/user";
+import { IAuthenticationInfo } from '../login/models/authenticationInfo';
+import {environment} from "../../../environments/environment";
 import {Router} from "@angular/router";
 
 @Injectable({
@@ -17,9 +17,13 @@ export class AuthService {
     return this.http.post<IAuthenticationInfo>(`${environment.localDBUrl}/auth/login`, user).pipe(tap(this.setToken));
   }
 
+  public registration(user: IUser): Observable<IAuthenticationInfo> {
+    return this.http.post<IAuthenticationInfo>(`${environment.localDBUrl}/auth/registration`, user).pipe(tap(this.setToken));
+  }
+
   public logout(): void {
     this.setToken(null);
-    this.router.navigate(['/']);
+    this.router.navigate(['/']).then();
   }
 
   private setToken(response: IAuthenticationInfo | null): void {
