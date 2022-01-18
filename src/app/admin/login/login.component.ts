@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import {AuthService} from "./services/auth.service";
 
 @Component({
   selector: 'app-login',
@@ -10,14 +11,16 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   form: FormGroup;
+  public email = new FormControl('', [Validators.required, Validators.email]);
+  public password = new FormControl('', [Validators.required,Validators.minLength(5)]);
   submitted = false;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, public authService: AuthService) { }
 
   ngOnInit(): void {
     this.form = new FormGroup({
-      email: new FormControl(null, [Validators.required, Validators.email]),
-      password: new FormControl(null, [Validators.required, Validators.minLength(6)]),
+      email: this.email,
+      password: this.password
     });
   }
 
@@ -32,6 +35,15 @@ export class LoginComponent implements OnInit {
       password: this.form.value.password,
       returnSecureToken: true
     };
+    console.log(user)
+
+    this.authService.login(user).subscribe(
+      () => {
+        this.form.reset();
+        this.submitted = false;
+        this.router.navigate(['/admin']).then();
+        },
+      () => alert('Введен неправильный email или password'));
 
     /*
     this.auth.login(user).subscribe( res => {

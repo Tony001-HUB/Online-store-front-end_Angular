@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
+import {AuthService} from "../login/services/auth.service";
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminDashboardComponent implements OnInit {
 
-  constructor() { }
+  public isLogin: boolean = true;
 
-  ngOnInit(): void {
+  constructor(private router: Router, private authService: AuthService) {
+    this.router.events.subscribe(() => {
+      this.isLogin = this.router.url.includes('/login');
+    });
   }
 
+  ngOnInit(): void {}
+
+  public logout() {
+    this.authService.logout();
+  }
 }

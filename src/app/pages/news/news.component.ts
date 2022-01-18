@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import {NewsService} from "./news.service";
-import {INews} from "./models/newsModel";
+import {INews} from "./models/news";
 import {MatDialog} from '@angular/material/dialog';
 import {ModalNewsDialogComponent} from "./modal-news-dialog/modal-news-dialog.component";
 import { shareReplay } from 'rxjs/operators';

@@ -4,7 +4,7 @@
   <div class="form-control">
     <mat-form-field class="form-field_wrapper" appearance="outline">
       <mat-label>Outline form field</mat-label>
-      <input matInput placeholder="Placeholder">
+      <input [formControl]="email" matInput placeholder="Placeholder">
       <mat-icon matSuffix class="fas fa-envelope"></mat-icon>
       <mat-hint>login</mat-hint>
     </mat-form-field>
@@ -13,7 +13,7 @@
   <div class="form-control">
     <mat-form-field class="form-field_wrapper" appearance="outline">
       <mat-label>Outline form field</mat-label>
-      <input matInput placeholder="Placeholder">
+      <input [formControl]="password" matInput placeholder="Placeholder">
       <mat-icon matSuffix class="fas fa-key"></mat-icon>
       <mat-hint>password</mat-hint>
     </mat-form-field>

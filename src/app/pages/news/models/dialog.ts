@@ -1,4 +1,4 @@
-import {INews} from "./newsModel";
+import {INews} from "./news";
 
 export interface DialogData {
   target: string;

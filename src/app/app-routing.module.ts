@@ -8,7 +8,7 @@ const routes: Routes = [
       { path: 'News', loadChildren: () => import('./pages/news/news.module').then(m => m.NewsModule) },
       { path: 'Music', loadChildren: () => import('./pages/music/music.module').then(m => m.MusicModule) }
     ] },
-  { path: 'Admin', loadChildren: () => import('./admin/admin.module').then(module => module.AdminModule) }
+  { path: 'admin', loadChildren: () => import('./admin/admin.module').then(module => module.AdminModule) }
 ];
 
 @NgModule({
