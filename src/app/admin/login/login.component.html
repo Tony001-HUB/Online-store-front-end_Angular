@@ -1,0 +1,32 @@
+<form class="example-form" [formGroup]="form" (ngSubmit)="submit()">
+  <h2>Login as admin</h2>
+
+  <div class="form-control">
+    <mat-form-field class="form-field_wrapper" appearance="outline">
+      <mat-label>Outline form field</mat-label>
+      <input matInput placeholder="Placeholder">
+      <mat-icon matSuffix class="fas fa-envelope"></mat-icon>
+      <mat-hint>login</mat-hint>
+    </mat-form-field>
+  </div>
+
+  <div class="form-control">
+    <mat-form-field class="form-field_wrapper" appearance="outline">
+      <mat-label>Outline form field</mat-label>
+      <input matInput placeholder="Placeholder">
+      <mat-icon matSuffix class="fas fa-key"></mat-icon>
+      <mat-hint>password</mat-hint>
+    </mat-form-field>
+  </div>
+
+  <div class="btn-wrapper">
+    <button
+      mat-raised-button
+      type="submit"
+      class="btn"
+      [disabled]="form.invalid || submitted">
+      Login
+    </button>
+  </div>
+
+</form>
