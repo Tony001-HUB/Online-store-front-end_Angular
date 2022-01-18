@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main-layout',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainLayoutComponent implements OnInit {
 
-  constructor() { }
+  public arrOfRoutes = [];
 
-  ngOnInit(): void {
+  constructor(private router: Router) {
+    this.router.events.subscribe(() => {
+      this.arrOfRoutes = ['Main-layout' ,...this.modifyRoutes(this.router.url.split('/'))];
+    });
   }
 
+  ngOnInit(): void {}
+
+  private modifyRoutes(routes) {
+    return routes.filter(data => data !== '');
+  }
 }
