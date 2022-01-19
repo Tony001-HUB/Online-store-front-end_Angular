@@ -45,7 +45,7 @@ export class RegistrationComponent implements OnInit {
       () => {
         this.form.reset();
         this.submitted = false;
-        this.router.navigate(['/admin']).then();
+        this.router.navigate(['/layout']).then();
       },
       () => alert('Данный юзер уже существует'));
   }

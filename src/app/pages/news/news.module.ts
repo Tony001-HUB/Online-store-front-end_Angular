@@ -12,6 +12,7 @@ import { MatDialogModule} from '@angular/material/dialog';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
+import {MatIconModule} from "@angular/material/icon";
 
 
 @NgModule({
@@ -19,18 +20,19 @@ import {MatInputModule} from "@angular/material/input";
     NewsComponent,
     ModalNewsDialogComponent
   ],
-  imports: [
-    CommonModule,
-    NewsRoutingModule,
-    RouterModule,
-    MatTableModule,
-    MatPaginatorModule,
-    HttpClientModule,
-    MatButtonModule,
-    MatDialogModule,
-    MatFormFieldModule,
-    ReactiveFormsModule,
-    MatInputModule
-  ]
+    imports: [
+        CommonModule,
+        NewsRoutingModule,
+        RouterModule,
+        MatTableModule,
+        MatPaginatorModule,
+        HttpClientModule,
+        MatButtonModule,
+        MatDialogModule,
+        MatFormFieldModule,
+        ReactiveFormsModule,
+        MatInputModule,
+        MatIconModule
+    ]
 })
 export class NewsModule { }

@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AdminRoutingModule } from './admin-routing.module';
-import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatIconModule} from "@angular/material/icon";
 import {MatMenuModule} from "@angular/material/menu";
@@ -22,7 +21,6 @@ import {MatDialogModule} from "@angular/material/dialog";
 
 @NgModule({
   declarations: [
-    AdminDashboardComponent,
     LoginComponent,
     UsersComponent,
     RegistrationComponent

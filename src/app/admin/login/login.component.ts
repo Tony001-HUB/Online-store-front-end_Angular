@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
       () => {
         this.form.reset();
         this.submitted = false;
-        this.router.navigate(['/admin']).then();
+        this.router.navigate(['/layout']).then();
         },
       () => alert('Введен неправильный email или password'));
   }

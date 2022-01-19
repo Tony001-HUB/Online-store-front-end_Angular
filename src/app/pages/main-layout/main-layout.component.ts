@@ -12,7 +12,7 @@ export class MainLayoutComponent implements OnInit {
 
   constructor(private router: Router) {
     this.router.events.subscribe(() => {
-      this.arrOfRoutes = ['Main-layout' ,...this.modifyRoutes(this.router.url.split('/'))];
+      this.arrOfRoutes = ['Main-App' ,...this.modifyRoutes(this.router.url.split('/'))];
     });
   }
 

@@ -3,15 +3,15 @@
     <mat-icon>more_vert</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
-    <button [routerLink]="'/Music'" mat-menu-item>
+    <button [routerLink]="'/layout/Music'" mat-menu-item>
       <mat-icon class="fas fa-music"></mat-icon>
       <span>Music</span>
     </button>
-    <button [routerLink]="'/Movies'" mat-menu-item>
+    <button [routerLink]="'/layout/Movies'" mat-menu-item>
       <mat-icon class="fas fa-video"></mat-icon>
       <span>Movies</span>
     </button>
-    <button [routerLink]="'/News'" mat-menu-item>
+    <button [routerLink]="'/layout/News'" mat-menu-item>
       <mat-icon class="far fa-newspaper"></mat-icon>
       <span>Newspaper</span>
     </button>
@@ -21,7 +21,6 @@
   <span class="hello-all">
     Welcome to my app (Angular  <i class="fab fa-angular"></i> + NEST.JS  <i class="fas fa-database"></i>)
   </span>
-  <button [routerLink]="'/admin/login'" mat-button class="my-style">Enter as User</button>
 </mat-toolbar>
 <app-navigation [routes]="arrOfRoutes"></app-navigation>
 

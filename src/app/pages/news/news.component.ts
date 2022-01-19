@@ -13,7 +13,7 @@ import { shareReplay } from 'rxjs/operators';
   styleUrls: ['./news.component.css']
 })
 export class NewsComponent implements OnInit  {
-  displayedColumns: string[] = [ 'name', 'weight', 'symbol', 'delete-btn', 'edit-btn'];
+  displayedColumns: string[] = [ 'name', 'weight', 'symbol', 'delete-btn', 'edit-btn', 'add-to-favorite'];
   dataSource: MatTableDataSource<INews>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -57,5 +57,9 @@ export class NewsComponent implements OnInit  {
     addButtonDialogRef.afterClosed().subscribe(result => {
       this.fetchNews();
     });
+  }
+
+  addNewsToFavorite(element) {
+    console.log(element)
   }
 }
