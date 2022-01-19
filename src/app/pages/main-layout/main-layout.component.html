@@ -1,5 +1,5 @@
 <mat-toolbar color="primary" class="menu-wrapper">
-  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+  <button mat-icon-button [disabled]="isAuth" [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
     <mat-icon>more_vert</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
@@ -15,6 +15,10 @@
       <mat-icon class="far fa-newspaper"></mat-icon>
       <span>Newspaper</span>
     </button>
+    <button [routerLink]="'/'" (click)="authService.logout()" mat-menu-item>
+      <mat-icon class="fas fa-sign-out-alt"> </mat-icon>
+      <span>Sign out</span>
+    </button>
   </mat-menu>
 
 
@@ -24,9 +28,9 @@
       </span>
   </ng-container>
   <ng-container *ngIf="!isAuth">
-      <span class="hello-all">
-        <mat-icon class="fas fa-user-tie"> </mat-icon> {{authService.userEmail.getValue()}}
-      </span>
+    <span class="hello-all">
+      <mat-icon class="fas fa-user-tie"> </mat-icon> {{authService.userEmail.getValue()}}
+    </span>
   </ng-container>
 </mat-toolbar>
 <app-navigation [routes]="arrOfRoutes"></app-navigation>

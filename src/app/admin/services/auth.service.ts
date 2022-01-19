@@ -24,7 +24,6 @@ export class AuthService {
 
   public logout(): void {
     this.setToken(null);
-    this.router.navigate(['/']).then();
   }
 
   public setUserEmail(email: string) {
