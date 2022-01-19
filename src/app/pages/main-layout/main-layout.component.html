@@ -18,9 +18,16 @@
   </mat-menu>
 
 
-  <span class="hello-all">
-    Welcome to my app (Angular  <i class="fab fa-angular"></i> + NEST.JS  <i class="fas fa-database"></i>)
-  </span>
+  <ng-container *ngIf="isAuth">
+      <span class="hello-all">
+        Welcome to my app (Angular  <i class="fab fa-angular"></i> + NEST.JS  <i class="fas fa-database"></i>)
+      </span>
+  </ng-container>
+  <ng-container *ngIf="!isAuth">
+      <span class="hello-all">
+        <mat-icon class="fas fa-user-tie"> </mat-icon> {{authService.userEmail.getValue()}}
+      </span>
+  </ng-container>
 </mat-toolbar>
 <app-navigation [routes]="arrOfRoutes"></app-navigation>
 

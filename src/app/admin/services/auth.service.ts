@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import { Observable, tap } from 'rxjs';
+import {BehaviorSubject, Observable, tap} from 'rxjs';
 import {IUser} from "../models/user";
 import { IAuthenticationInfo } from '../models/authenticationInfo';
 import {environment} from "../../../environments/environment";
@@ -10,6 +10,7 @@ import {Router} from "@angular/router";
   providedIn: 'root'
 })
 export class AuthService {
+  public userEmail = new BehaviorSubject('');
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -24,6 +25,10 @@ export class AuthService {
   public logout(): void {
     this.setToken(null);
     this.router.navigate(['/']).then();
+  }
+
+  public setUserEmail(email: string) {
+    localStorage.setItem('user-email', email);
   }
 
   private setToken(response: IAuthenticationInfo | null): void {

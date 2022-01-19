@@ -39,6 +39,7 @@ export class LoginComponent implements OnInit {
 
     this.authService.login(user).subscribe(
       () => {
+        this.authService.setUserEmail(user.email);
         this.form.reset();
         this.submitted = false;
         this.router.navigate(['/layout']).then();
