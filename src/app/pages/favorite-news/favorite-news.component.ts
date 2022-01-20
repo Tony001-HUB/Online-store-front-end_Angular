@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {APIUserResponse, UsersService} from "../news/services/users.service";
 import {Router} from "@angular/router";
+import {NewsService} from "../news/services/news.service";
 
 @Component({
   selector: 'app-favorite-news',
@@ -10,14 +11,26 @@ import {Router} from "@angular/router";
 export class FavoriteNewsComponent implements OnInit {
   public news: APIUserResponse[] = [];
 
-  constructor(public usersService: UsersService, private router: Router) { }
+  constructor(public usersService: UsersService, private router: Router, public newsService: NewsService) { }
 
   ngOnInit(): void {
+    this.fetchData();
+  }
+
+  private fetchData() {
     this.usersService.getUserByEmail(localStorage.getItem('user-email')).subscribe(data => {this.news = data['news']});
-    console.log(this.news)
   }
 
   public openNews(link: string) {
-    this.router.navigate([link]).then();
+    window.location.replace(link);
+  }
+
+  public deleteNews(newsId: number) {
+    this.newsService.deleteNewsFromUserList(newsId).subscribe(
+      () => {
+        this.fetchData();
+        alert(`Новость успешно удалена из выбранных`);
+      },
+      () => { alert('Упс... Что-то пошло не так');});
   }
 }

@@ -34,4 +34,8 @@ export class NewsService {
   public updateNews(news: INews, id: number): Observable<void> {
     return this.httpClient.put<void>(`${environment.localDBUrl}/news/${id}`, news);
   }
+
+  public deleteNewsFromUserList(newsId: number): Observable<void> {
+    return this.httpClient.delete<void>(`${environment.localDBUrl}/users/deleteMyNew/${newsId}`)
+  }
 }

@@ -6,7 +6,7 @@
     <mat-card-content class="mat-card-content_wrapper">{{currentNews.country}}</mat-card-content>
 
     <mat-card-footer class="mat-card-footer_wrapper">
-      <button mat-raised-button class="btn">Delete</button>
+      <button mat-raised-button class="btn" (click)="deleteNews(currentNews.id)">Delete</button>
       <button mat-raised-button class="btn" (click)="openNews(currentNews.link)">Open</button>
     </mat-card-footer>
   </mat-card>

@@ -4,6 +4,7 @@ import {Observable} from "rxjs";
 import { environment } from 'src/environments/environment';
 
 export interface APIUserResponse {
+  id?: number,
   country: string,
   title: string,
   link: string
