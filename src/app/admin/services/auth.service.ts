@@ -40,6 +40,10 @@ export class AuthService {
     }
   }
 
+  public isAuthenticated(): boolean {
+    return !!this.token;
+  }
+
   get token(): string {
     const expDate = new Date(localStorage.getItem('fb-token-exp'));
     if ( new Date() > expDate ) {
