@@ -2,7 +2,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatTableDataSource} from "@angular/material/table";
 import {INews} from "../../pages/news/models/news";
 import {MatPaginator} from "@angular/material/paginator";
-import {NewsService} from "../../pages/news/news.service";
+import {NewsService} from "../../pages/news/services/news.service";
 import {MatDialog} from "@angular/material/dialog";
 import {UsersService} from "../services/users.service";
 import {shareReplay} from "rxjs/operators";

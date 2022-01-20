@@ -1,11 +1,14 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import {NewsService} from "./news.service";
+import {NewsService} from "./services/news.service";
 import {INews} from "./models/news";
 import {MatDialog} from '@angular/material/dialog';
 import {ModalNewsDialogComponent} from "./modal-news-dialog/modal-news-dialog.component";
 import { shareReplay } from 'rxjs/operators';
+import {IFavorite} from "./models/favorite";
+
+
 
 @Component({
   selector: 'app-series',
@@ -59,7 +62,14 @@ export class NewsComponent implements OnInit  {
     });
   }
 
-  addNewsToFavorite(element) {
-    console.log(element)
+  public addNewsToFavorite(element: IFavorite) {
+     const infoAObj = {
+       newsId: element.id,
+       email: localStorage.getItem('user-email')
+     }
+     this.newsService.addNewsToUser(infoAObj).subscribe(() => {
+         alert(`Новость успешно добавлена в избранные: ${element['title']}`);
+       },
+       () => { alert('Упс... Что-то пошло не так');});
   }
 }

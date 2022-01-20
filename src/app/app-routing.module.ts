@@ -12,9 +12,10 @@ const routes: Routes = [
       { path: 'login', component: LoginComponent},
       { path: 'Movies', loadChildren: () => import('./pages/movies/movies.module').then(m => m.MoviesModule), canActivate: [AuthGuard] },
       { path: 'News', loadChildren: () => import('./pages/news/news.module').then(m => m.NewsModule), canActivate: [AuthGuard] },
-      { path: 'Music', loadChildren: () => import('./pages/music/music.module').then(m => m.MusicModule), canActivate: [AuthGuard] }
+      { path: 'Music', loadChildren: () => import('./pages/music/music.module').then(m => m.MusicModule), canActivate: [AuthGuard] },
+      { path: 'Favorite', loadChildren: () => import('./pages/favorite-news/favorite-news.module').then(m => m.FavoriteNewsModule), canActivate: [AuthGuard] }
     ] },
-  { path: '..................', loadChildren: () => import('./admin/admin.module').then(module => module.AdminModule) }
+  { path: '..................', loadChildren: () => import('./admin/admin.module').then(module => module.AdminModule) },
 ];
 
 @NgModule({

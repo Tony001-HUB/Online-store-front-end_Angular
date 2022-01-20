@@ -38,6 +38,7 @@ import {MatInputModule} from "@angular/material/input";
     MatStepperModule,
     ReactiveFormsModule,
     MatInputModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

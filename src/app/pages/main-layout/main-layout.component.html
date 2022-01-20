@@ -15,6 +15,10 @@
       <mat-icon class="far fa-newspaper"></mat-icon>
       <span>Newspaper</span>
     </button>
+    <button [routerLink]="'/layout/Favorite'" mat-menu-item>
+      <mat-icon class="far fa-star"> </mat-icon>
+      <span>Favorite New</span>
+    </button>
     <button [routerLink]="'/'" (click)="authService.logout()" mat-menu-item>
       <mat-icon class="fas fa-sign-out-alt"> </mat-icon>
       <span>Sign out</span>

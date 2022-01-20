@@ -38,11 +38,13 @@ export class RegistrationComponent implements OnInit {
       email: this.form.value.email,
       password: this.form.value.password,
       name: this.form.value.name,
-      secondName: this.form.value.secondName
+      secondName: this.form.value.secondName,
+      returnSecureToken: true
     };
     console.log(user)
     this.authService.registration(user).subscribe(
       () => {
+        this.authService.setUserEmail(user.email);
         this.form.reset();
         this.submitted = false;
         this.router.navigate(['/layout']).then();
